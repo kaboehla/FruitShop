@@ -25,8 +25,6 @@ app.run(function ($rootScope, $location, $route) {
     $rootScope.keys = Object.keys;
 });
 
-
-
 // this is the root controller for the whole application. It defines the shared data in the parent scope
 app.controller("FruitController", function FruitController($scope) {
 
@@ -34,7 +32,7 @@ app.controller("FruitController", function FruitController($scope) {
         {id: 1, name: 'Boskop', family : 'Apfel'},
         {id: 2, name: 'Elmar', family : 'Apfel'},
         {id: 3, name: 'Sauerkirsche', family : 'Kirsche'},
-        {id: 4, name: 'Amarena-Kirsche', family : 'kirsche'},
+        {id: 4, name: 'Amarena-Kirsche', family : 'Kirsche'},
         {id: 5, name: 'Achener Hausapfel', family : 'Apfel'},
         {id: 6, name: 'Alantapfel', family : 'Apfel'},
         {id: 7, name: 'Pfaffenapfel', family : 'Apfel'}
@@ -45,7 +43,8 @@ app.controller("FruitController", function FruitController($scope) {
         {id: 2, name : 'Wirsingkohl'}
     ];
 
-    //$scope.inputFruit = '';
-
+    $scope.getTotalFruits = function(){
+        return $scope.fruits.length;
+    }
 
 });

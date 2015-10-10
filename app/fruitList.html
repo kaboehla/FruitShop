@@ -16,24 +16,31 @@
     <div class="col-md-6">
         <table class="table table-striped resultArea">
             <tr>
+                <th><a href="" ng-click="sort.predicate='id'; sort.reverse =! sort.reverse">Id</a> </th>
                 <th>
-                    <a href="" ng-click="sort.predicate='name'; sort.reverse=!sort.reverse">Name</a>
+                    <a href="" ng-click="sort.predicate='name'; sort.reverse =! sort.reverse">Name</a>
                 </th>
                 <th class="text-right">
-                    <a href="" ng-click="sort.predicate='familiy'; sort.reverse=!sort.reverse">Obstsorte</a>
+                    <a href="" ng-click="sort.predicate='familiy'; sort.reverse =! sort.reverse">Obstsorte</a>
                 </th>
             </tr>
             <tr ng-repeat="fruit in fruits|filter: query|orderBy:sort.predicate:sort.reverse">
                 <td>
+                    {{fruit.id}}
+                </td>
+                <td>
                     <a href="#/state/{{fruit.id}}">{{fruit.name}}</a>
                 </td>
                 <td class="text-right">
-                    <!--{{state.area|number:2}}-->
                     {{fruit.family}}
                 </td>
             </tr>
         </table>
     </div>
+</div>
+<div class="row-spacer" />
+<div>
+    <div class="well" style="width: 150px;">Gesamtzahl: <span class="badge">{{getTotalFruits()}}</span></div>
 </div>
 <div>
     <!-- https://www.youtube.com/watch?v=WuiHuZq_cg4 -->
