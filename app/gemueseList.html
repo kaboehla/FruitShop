@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-12">
+
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="text" ng-model="query.name" class="form-control" id="queryName">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row-spacer"></div>
+
+<!--<div class="row" ng-show="query.name">-->
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-striped resultArea">
+            <tr>
+                <th>
+                    <a href="" ng-click="sort.predicate='name'; sort.reverse=!sort.reverse">Name</a>
+                </th>
+            </tr>
+            <tr ng-repeat="gem in gemuese|filter: query|orderBy:sort.predicate:sort.reverse">
+                <td>
+                    <a href="#/state/{{gem.id}}">{{gem.name}}</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

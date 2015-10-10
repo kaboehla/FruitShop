@@ -1,0 +1,43 @@
+<div ng-controller="fruitListController">
+<div class="row">
+    <div class="col-md-12">
+
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="text" ng-model="query.name" class="form-control" id="queryName">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row-spacer"></div>
+
+<!--<div class="row" ng-show="query.name">-->
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-striped resultArea">
+            <tr>
+                <th>
+                    <a href="" ng-click="sort.predicate='name'; sort.reverse=!sort.reverse">Name</a>
+                </th>
+                <th class="text-right">
+                    <a href="" ng-click="sort.predicate='familiy'; sort.reverse=!sort.reverse">Obstsorte</a>
+                </th>
+            </tr>
+            <tr ng-repeat="fruit in fruits|filter: query|orderBy:sort.predicate:sort.reverse">
+                <td>
+                    <a href="#/state/{{fruit.id}}">{{fruit.name}}</a>
+                </td>
+                <td class="text-right">
+                    <!--{{state.area|number:2}}-->
+                    {{fruit.family}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div>
+    <!-- https://www.youtube.com/watch?v=WuiHuZq_cg4 -->
+    <input id="inputFruit" type="text" ng-model="inputFruit" ng-model-instant>
+    <button class="btn" ng-click="addFruit()"><i class="glyphicon-plus"></i>Add</button>
+</div>
+</div>
