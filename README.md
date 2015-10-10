@@ -1,2 +1,3 @@
 # FruitShop
-testing:learn AngularJs by building a Shop-System
+learning AngularJs basics by building a Shop-System
+try and error ;)
