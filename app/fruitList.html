@@ -23,6 +23,9 @@
                 <th class="text-right">
                     <a href="" ng-click="sort.predicate='familiy'; sort.reverse =! sort.reverse">Obstsorte</a>
                 </th>
+                <th class="text-right text-primary">
+                    Preis
+                </th>
             </tr>
             <tr ng-repeat="fruit in fruits|filter: query|orderBy:sort.predicate:sort.reverse">
                 <td>
@@ -33,6 +36,9 @@
                 </td>
                 <td class="text-right">
                     {{fruit.family}}
+                </td>
+                <td>
+                    {{fruit.preis}}
                 </td>
             </tr>
         </table>

@@ -4,25 +4,31 @@
 <head>
     <meta charset="utf-8" />
     <title>AngularJS - First App</title>
-    <!--<link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />-->
     <link rel="stylesheet" href="app/lib/bootstrap/css/bootstrap.css" />
 </head>
 <style>[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {display: none !important;}</style>
 <body>
 <div ng-controller="FruitController" ng-cloak class="container">
-    <div>
-        <ul class="nav nav-pills">
-            <li role="presentation"><a href="./">Home</a> </li>
-        </ul>
-        <ul>
-            <code>$location.path(): "{{ $location.path() }}"</code>
-        </ul>
+    <div class="row">
+        <div class="com-md-12"><h1>Fruit Shop</h1></div>
     </div>
-    <div>
-        <div class="route-container">
-            <!-- generierte Navigation -->
-            <!-- https://angularjs.de/artikel/navigation-menu-bootstrap -->
-            <navigation></navigation>
+    <div class="row">
+        <div class="col-md-12">
+            <code>$location.path(): "{{ $location.path() }}"</code>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="route-container">
+                <!-- generierte Navigation -->
+                <!-- https://angularjs.de/artikel/navigation-menu-bootstrap -->
+                <navigation></navigation>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <div ng-view></div>
         </div>
     </div>
